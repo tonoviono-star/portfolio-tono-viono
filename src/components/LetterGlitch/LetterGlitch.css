@@ -3,54 +3,12 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
-  isolation: isolate;
-  background: #000;
-  pointer-events: auto;
-  --glitch-x: 50%;
-  --glitch-y: 50%;
-}
-
-.letter-glitch-fallback {
-  position: absolute;
-  inset: -8%;
-  z-index: 0;
-  display: block;
-  overflow: hidden;
-  color: rgb(255 255 255 / 14%);
-  font: 600 clamp(10px, 1.05vw, 15px)/1.75 ui-monospace, SFMono-Regular, Consolas, monospace;
-  letter-spacing: .32em;
-  pointer-events: none;
-  text-align: justify;
-  word-spacing: .2em;
-  transform: translate3d(0, 0, 0);
-  transition: color .16s ease, filter .16s ease;
-  user-select: none;
-}
-
-.letter-glitch.is-pointer-active .letter-glitch-fallback {
-  color: rgb(97 220 163 / 72%);
-  filter: drop-shadow(0 0 8px rgb(97 220 163 / 35%));
-  mask-image: radial-gradient(230px circle at var(--glitch-x) var(--glitch-y), #000 0%, rgb(0 0 0 / 92%) 32%, transparent 100%);
-}
-
-.letter-glitch.is-clicking .letter-glitch-fallback {
-  animation: letter-glitch-tear 520ms steps(2, end);
 }
 
 .letter-glitch-canvas {
   position: absolute;
   inset: 0;
-  z-index: 1;
   display: block;
   width: 100%;
   height: 100%;
-  pointer-events: none;
 }
-
-@keyframes letter-glitch-tear {
-  0% { transform: translate3d(0, 0, 0) skewX(0deg); }
-  20% { transform: translate3d(-18px, 5px, 0) skewX(-5deg); }
-  45% { transform: translate3d(14px, -4px, 0) skewX(4deg); }
-  100% { transform: translate3d(0, 0, 0) skewX(0deg); }
-}
-

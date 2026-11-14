@@ -1,9 +1,21 @@
 import SplitFlapText from '@/components/SplitFlapText/SplitFlapText';
+import LetterGlitch from '@/components/LetterGlitch/LetterGlitch';
 import styles from './loading.module.css';
 
 export default function Loading() {
   return (
     <main className={styles.screen} aria-label="Memuat portfolio Tono Viono">
+      <div className={styles.glitchBg} aria-hidden="true">
+        <LetterGlitch
+          glitchColors={['#ffffff', '#61dca3', '#d6ed9f']}
+          baseColor="#f2eee3"
+          baseOpacity={0.18}
+          glitchAmount={0.55}
+          speed={1.2}
+          flow={0.5}
+          clickEffect="tear"
+        />
+      </div>
       <div className={styles.content}>
         <p className={styles.eyebrow}>PERSONAL WEBSITE</p>
         <SplitFlapText

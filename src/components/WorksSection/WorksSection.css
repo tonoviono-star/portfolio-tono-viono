@@ -1,5 +1,5 @@
-.works-section { position: relative; overflow: hidden; border-top: 1px solid rgb(255 255 255 / 12%); background: radial-gradient(circle at 90% 10%, rgb(214 237 159 / 6%), transparent 23%), linear-gradient(150deg, #050505, #000 56%, #060806); color: #f2eee3; }
-.works-inner { width: min(1440px, 100%); margin: 0 auto; padding: clamp(100px, 12vw, 180px) clamp(24px, 6vw, 110px) clamp(72px, 9vw, 140px); }
+.works-section { position: relative; overflow: hidden; border-top: 1px solid rgb(255 255 255 / 12%); background: radial-gradient(circle at 90% 10%, rgb(214 237 159 / 7%), transparent 25%), linear-gradient(150deg, rgb(5 5 5 / 82%), rgb(0 0 0 / 84%) 56%, rgb(6 8 6 / 82%)); color: #f2eee3; }
+.works-inner { position: relative; z-index: 1; width: min(1440px, 100%); margin: 0 auto; padding: clamp(100px, 12vw, 180px) clamp(24px, 6vw, 110px) clamp(72px, 9vw, 140px); }
 .works-heading { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 18px 28px; align-items: end; padding-bottom: clamp(42px, 6vw, 78px); border-bottom: 1px solid rgb(242 238 227 / 14%); }
 .works-heading p, .works-section-heading p { grid-column: 1 / -1; margin: 0; color: #d6ed9f; font-size: 10px; letter-spacing: .2em; text-transform: uppercase; }
 .works-heading h2 { margin: 0; font-size: clamp(3.2rem, 7vw, 7.5rem); font-weight: 400; letter-spacing: -.075em; line-height: .84; }

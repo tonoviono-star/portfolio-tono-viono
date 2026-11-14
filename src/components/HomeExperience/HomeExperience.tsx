@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import RubberSegment from '@/components/RubberSegment/RubberSegment';
 import SplitFlapText from '@/components/SplitFlapText/SplitFlapText';
 import AboutSection from '@/components/AboutSection/AboutSection';
+import LetterGlitch from '@/components/LetterGlitch/LetterGlitch';
 import WorksSection from '@/components/WorksSection/WorksSection';
 import ContributeSection from '@/components/ContributeSection/ContributeSection';
 
@@ -124,11 +125,16 @@ const publications = [
 
 export default function HomeExperience() {
   const [loading, setLoading] = useState(true);
+  const [renderLoadingGlitch, setRenderLoadingGlitch] = useState(true);
   const [selectedExperience, setSelectedExperience] = useState(workTimeline[2]);
 
   useEffect(() => {
     const timer = window.setTimeout(() => setLoading(false), 3200);
-    return () => window.clearTimeout(timer);
+    const glitchTimer = window.setTimeout(() => setRenderLoadingGlitch(false), 4600);
+    return () => {
+      window.clearTimeout(timer);
+      window.clearTimeout(glitchTimer);
+    };
   }, []);
 
   return (
@@ -136,6 +142,19 @@ export default function HomeExperience() {
       <div className={`loading ${!loading ? 'loadingdone' : ''}`} aria-hidden={!loading}>
         <div className="loadingtop" />
         <div className="loadingbottom" />
+        {renderLoadingGlitch && (
+          <div className="loading-glitch-bg">
+            <LetterGlitch
+              glitchColors={['#ffffff', '#61dca3', '#d6ed9f']}
+              baseColor="#f2eee3"
+              baseOpacity={0.18}
+              glitchAmount={0.55}
+              speed={1.2}
+              flow={0.5}
+              clickEffect="tear"
+            />
+          </div>
+        )}
         <div className="loadingmark">
           <SplitFlapText words={["PORTFOLIO", "TONOVIONO"]} fontSize={42} tileColor="#111827" textColor="#f8fafc" tileRadius={5} gap={5} flipsPerChar={5} stagger={0.035} flipDuration={0.08} cycleDelay={300} loop={false} depth={0.5} intro />
         </div>
@@ -153,9 +172,23 @@ export default function HomeExperience() {
 
       <HeroSequence />
 
-      <AboutSection />
-      <section id="experiences" className="experience-section" aria-labelledby="experience-title">
-        <div className="experience-contours" aria-hidden="true" />
+      <div className="nonhero-wrapper">
+        <div className="nonhero-glitch-bg" aria-hidden="true">
+          <LetterGlitch
+            glitchColors={['#ffffff', '#61dca3', '#d6ed9f']}
+            baseColor="#f2eee3"
+            baseOpacity={0.15}
+            glitchAmount={0.5}
+            speed={0.8}
+            flow={0.5}
+            clickEffect="tear"
+          />
+        </div>
+
+        <div className="nonhero-content">
+          <AboutSection />
+          <section id="experiences" className="experience-section" aria-labelledby="experience-title">
+            <div className="experience-contours" aria-hidden="true" />
         <div className="experience-inner">
           <div className="experience-heading">
             <p>Experiences</p>
@@ -215,9 +248,11 @@ export default function HomeExperience() {
           </section>
         </div>
       </section>
-      <WorksSection />
-      <ContributeSection />
-    </main>
+        <WorksSection />
+        <ContributeSection />
+      </div>
+    </div>
+  </main>
   );
 }
 

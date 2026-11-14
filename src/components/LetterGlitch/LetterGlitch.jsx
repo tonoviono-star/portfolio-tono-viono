@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import './LetterGlitch.css';
 
 const DEFAULT_CHARACTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$&*()-_+=/[]{};:<>.,0123456789';
 const DEFAULT_FONT = "ui-monospace, 'SF Mono', 'JetBrains Mono', Menlo, Consolas, 'Liberation Mono', monospace";
@@ -151,8 +152,8 @@ const link = gl => {
 };
 
 const LetterGlitch = ({
-  glitchColors = ['#ffffff', '#61dca3'],
-  baseColor = '',
+  glitchColors,
+  baseColor,
   characters = DEFAULT_CHARACTERS,
   fontFamily = DEFAULT_FONT,
   fontSize = 14,
@@ -170,10 +171,10 @@ const LetterGlitch = ({
   centerFade = 0,
   intro = true,
   lightMode = false,
-  backgroundColor = '',
-  dpr = undefined,
+  backgroundColor,
+  dpr,
   className = '',
-  style = undefined,
+  style,
   ...rest
 }) => {
   const containerRef = useRef(null);
@@ -921,48 +922,7 @@ const LetterGlitch = ({
       gl.deleteTexture(stateTexture);
       gl.deleteVertexArray(vao);
       gl.deleteProgram(program.program);
-      gl.getExtension('WEBGL_lose_context')?.loseContext();
-    };
-  }, []);
-
-  // Keep the interaction visible on devices where WebGL2 is unavailable or
-  // reduced by the browser. The canvas above still provides the full React
-  // Bits effect whenever WebGL2 is available.
-  useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return undefined;
-
-    let clickTimer = 0;
-    const updatePointer = event => {
-      const rect = container.getBoundingClientRect();
-      const x = event.clientX - rect.left;
-      const y = event.clientY - rect.top;
-      const inside = x >= 0 && y >= 0 && x <= rect.width && y <= rect.height;
-      container.classList.toggle('is-pointer-active', inside);
-      if (inside) {
-        container.style.setProperty('--glitch-x', `${x}px`);
-        container.style.setProperty('--glitch-y', `${y}px`);
-      }
-    };
-    const click = event => {
-      updatePointer(event);
-      if (!container.classList.contains('is-pointer-active')) return;
-      container.classList.remove('is-clicking');
-      void container.offsetWidth;
-      container.classList.add('is-clicking');
-      window.clearTimeout(clickTimer);
-      clickTimer = window.setTimeout(() => container.classList.remove('is-clicking'), 520);
-    };
-    const leaveWindow = () => container.classList.remove('is-pointer-active');
-
-    window.addEventListener('pointermove', updatePointer, { passive: true });
-    window.addEventListener('pointerdown', click, { passive: true });
-    document.documentElement.addEventListener('pointerleave', leaveWindow);
-    return () => {
-      window.clearTimeout(clickTimer);
-      window.removeEventListener('pointermove', updatePointer);
-      window.removeEventListener('pointerdown', click);
-      document.documentElement.removeEventListener('pointerleave', leaveWindow);
+      if (!canvas.isConnected) gl.getExtension('WEBGL_lose_context')?.loseContext();
     };
   }, []);
 
@@ -972,9 +932,6 @@ const LetterGlitch = ({
 
   return (
     <div ref={containerRef} className={`letter-glitch${className ? ` ${className}` : ''}`} style={style} {...rest}>
-      <span className="letter-glitch-fallback" aria-hidden="true">
-        A7 0X SIGNAL 4F 2Q TONO VIONO // 8M C3 LIVE 7K 1N // A7 0X SIGNAL 4F 2Q TONO VIONO // 8M C3 LIVE 7K 1N //
-      </span>
       <canvas ref={canvasRef} className="letter-glitch-canvas" aria-hidden="true" />
     </div>
   );

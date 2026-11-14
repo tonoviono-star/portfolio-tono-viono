@@ -1,9 +1,9 @@
-.connect-intro { display: grid; min-height: clamp(360px, 58vw, 780px); place-items: center; overflow: hidden; padding: 10vw 7vw; background: radial-gradient(circle at 20% 78%, rgb(214 237 159 / 6%), transparent 25%), linear-gradient(145deg, #050505, #000 65%, #070907); color: #f2eee3; }
-.connect-intro .focus-container { max-width: min(100%, 1200px); gap: clamp(12px, 2vw, 32px); }
+.connect-intro { position: relative; display: grid; min-height: clamp(360px, 58vw, 780px); place-items: center; overflow: hidden; padding: 10vw 7vw; background: radial-gradient(circle at 20% 78%, rgb(214 237 159 / 7%), transparent 30%), linear-gradient(145deg, rgb(5 5 5 / 82%), rgb(0 0 0 / 84%) 65%, rgb(7 9 7 / 82%)); color: #f2eee3; }
+.connect-intro .focus-container { position: relative; z-index: 1; max-width: min(100%, 1200px); gap: clamp(12px, 2vw, 32px); }
 .connect-intro .focus-word { font-size: clamp(3rem, 9vw, 10rem); font-weight: 600; letter-spacing: -.085em; line-height: .86; }
-.drift-wall-section { position: relative; height: clamp(420px, 57vw, 760px); overflow: hidden; background: #000; border-top: 1px solid rgb(242 238 227 / 14%); }
-.contribute-section { border-top: 1px solid rgb(242 238 227 / 14%); background: radial-gradient(circle at 82% 16%, rgb(214 237 159 / 5%), transparent 24%), #000; color: #f2eee3; }
-.contribute-inner { width: min(1440px, 100%); margin: 0 auto; padding: clamp(90px, 12vw, 170px) clamp(24px, 6vw, 110px); }
+.drift-wall-section { position: relative; height: clamp(420px, 57vw, 760px); overflow: hidden; background: rgb(0 0 0 / 88%); border-top: 1px solid rgb(242 238 227 / 14%); }
+.contribute-section { position: relative; border-top: 1px solid rgb(242 238 227 / 14%); background: radial-gradient(circle at 82% 16%, rgb(214 237 159 / 6%), transparent 28%), rgb(0 0 0 / 84%); color: #f2eee3; }
+.contribute-inner { position: relative; z-index: 1; width: min(1440px, 100%); margin: 0 auto; padding: clamp(90px, 12vw, 170px) clamp(24px, 6vw, 110px); }
 .contribute-inner > header { padding-bottom: clamp(48px, 7vw, 96px); }
 .contribute-inner > header p, .contact-list > p { margin: 0 0 16px; color: #d6ed9f; font-size: 10px; letter-spacing: .2em; text-transform: uppercase; }
 .contribute-inner h2 { margin: 0; font-size: clamp(3.2rem, 8vw, 8.5rem); font-weight: 400; letter-spacing: -.08em; line-height: .82; }
