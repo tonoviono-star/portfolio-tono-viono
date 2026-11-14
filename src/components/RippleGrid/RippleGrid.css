@@ -1,0 +1,69 @@
+@property --ripple-x {
+  syntax: '<length-percentage>';
+  inherits: false;
+  initial-value: 50%;
+}
+
+@property --ripple-y {
+  syntax: '<length-percentage>';
+  inherits: false;
+  initial-value: 50%;
+}
+
+.ripple-grid-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  isolation: isolate;
+  background: #000;
+  pointer-events: auto;
+  --ripple-x: 50%;
+  --ripple-y: 50%;
+}
+
+.ripple-grid-container::before,
+.ripple-grid-container::after {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  content: '';
+  display: none;
+}
+
+.ripple-grid-container::before {
+  background:
+    linear-gradient(rgb(214 237 159 / 24%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(214 237 159 / 24%) 1px, transparent 1px);
+  background-size: 54px 54px;
+  mask-image: radial-gradient(circle at center, black 0%, transparent 84%);
+  opacity: .9;
+}
+
+.ripple-grid-container::after {
+  background: radial-gradient(circle at var(--ripple-x) var(--ripple-y), rgb(214 237 159 / 38%), transparent 12% 38%);
+  animation: ripple-grid-pulse 3.2s ease-in-out infinite;
+  mix-blend-mode: screen;
+  transition: --ripple-x 180ms ease-out, --ripple-y 180ms ease-out;
+}
+
+.ripple-grid-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: transparent !important;
+  pointer-events: none;
+  opacity: 1;
+}
+
+@keyframes ripple-grid-pulse {
+  0%, 100% { transform: scale(.84); opacity: .18; }
+  50% { transform: scale(1.15); opacity: .48; }
+}
+
+
+

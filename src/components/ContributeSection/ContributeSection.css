@@ -1,0 +1,23 @@
+.connect-intro { display: grid; min-height: clamp(360px, 58vw, 780px); place-items: center; overflow: hidden; padding: 10vw 7vw; background: radial-gradient(circle at 20% 78%, rgb(214 237 159 / 6%), transparent 25%), linear-gradient(145deg, #050505, #000 65%, #070907); color: #f2eee3; }
+.connect-intro .focus-container { max-width: min(100%, 1200px); gap: clamp(12px, 2vw, 32px); }
+.connect-intro .focus-word { font-size: clamp(3rem, 9vw, 10rem); font-weight: 600; letter-spacing: -.085em; line-height: .86; }
+.drift-wall-section { position: relative; height: clamp(420px, 57vw, 760px); overflow: hidden; background: #000; border-top: 1px solid rgb(242 238 227 / 14%); }
+.contribute-section { border-top: 1px solid rgb(242 238 227 / 14%); background: radial-gradient(circle at 82% 16%, rgb(214 237 159 / 5%), transparent 24%), #000; color: #f2eee3; }
+.contribute-inner { width: min(1440px, 100%); margin: 0 auto; padding: clamp(90px, 12vw, 170px) clamp(24px, 6vw, 110px); }
+.contribute-inner > header { padding-bottom: clamp(48px, 7vw, 96px); }
+.contribute-inner > header p, .contact-list > p { margin: 0 0 16px; color: #d6ed9f; font-size: 10px; letter-spacing: .2em; text-transform: uppercase; }
+.contribute-inner h2 { margin: 0; font-size: clamp(3.2rem, 8vw, 8.5rem); font-weight: 400; letter-spacing: -.08em; line-height: .82; }
+.contribute-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(280px, .75fr); gap: clamp(54px, 12vw, 180px); }
+.comment-form { display: grid; gap: 22px; }
+.comment-form label { display: grid; gap: 10px; color: rgb(242 238 227 / 62%); font-size: 10px; letter-spacing: .13em; text-transform: uppercase; }
+.comment-form input, .comment-form textarea { width: 100%; border: 0; border-bottom: 1px solid rgb(242 238 227 / 27%); border-radius: 0; padding: 11px 0 14px; background: transparent; color: #f2eee3; font: inherit; font-size: clamp(1rem, 1.4vw, 1.35rem); letter-spacing: -.025em; outline: none; resize: vertical; transition: border-color .25s ease; }
+.comment-form input:focus, .comment-form textarea:focus { border-color: #d6ed9f; }
+.comment-form textarea { min-height: 150px; }
+.comment-form button { justify-self: start; display: inline-flex; align-items: center; gap: 18px; margin-top: 16px; border: 1px solid rgb(242 238 227 / 55%); border-radius: 999px; padding: 14px 18px; background: transparent; color: #f2eee3; cursor: pointer; font: inherit; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; transition: background .25s ease, color .25s ease; }
+.comment-form button:hover { background: #f2eee3; color: #101210; }.comment-form button span { color: #d6ed9f; font-size: 16px; }
+.contact-list { display: grid; align-content: start; }
+.contact-list a { display: grid; grid-template-columns: 28px minmax(0, 1fr) 16px; gap: 14px; align-items: center; border-top: 1px solid rgb(242 238 227 / 16%); padding: 18px 0; color: #f2eee3; text-decoration: none; transition: color .2s ease, padding-left .2s ease; }
+.contact-list a:last-child { border-bottom: 1px solid rgb(242 238 227 / 16%); }.contact-list a:hover { padding-left: 7px; color: #d6ed9f; }
+.contact-list svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }.contact-list a:nth-of-type(4) svg { fill: currentColor; stroke: none; }
+.contact-list span { display: grid; gap: 5px; }.contact-list small { color: rgb(242 238 227 / 52%); font-size: 9px; letter-spacing: .13em; text-transform: uppercase; }.contact-list strong { font-size: clamp(.95rem, 1.2vw, 1.2rem); font-weight: 500; letter-spacing: -.025em; }.contact-list i { color: #d6ed9f; font-size: 15px; font-style: normal; }
+@media (max-width: 850px) { .connect-intro { min-height: 46svh; } .drift-wall-section { height: clamp(390px, 88vw, 580px); } .contribute-inner { padding: 100px 24px; }.contribute-grid { grid-template-columns: 1fr; gap: 68px; } }
