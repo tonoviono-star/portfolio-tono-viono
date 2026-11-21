@@ -1,8 +1,8 @@
-.about-section { position: relative; min-height: 100vh; overflow: hidden; border-top: 1px solid rgb(255 255 255 / 12%); background: radial-gradient(circle at 8% 76%, rgb(214 237 159 / 7%), transparent 30%), linear-gradient(145deg, rgb(5 5 5 / 82%), rgb(0 0 0 / 84%) 55%, rgb(8 9 8 / 82%)); }
-.about-content { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(300px, .9fr) minmax(0, 1.1fr); align-items: center; gap: clamp(38px, 8vw, 120px); min-height: 100vh; padding: 10vw; }
-.about-footer { position: absolute; z-index: 3; right: 0; bottom: clamp(40px, 5vw, 88px); left: 0; display: flex; align-items: center; min-height: clamp(74px, 8vw, 118px); border-top: 1px solid rgb(242 238 227 / 18%); background: rgb(0 0 0 / 72%); overflow: hidden; }.about-footer .parallax { width: 100%; }
+.about-section { position: relative; min-height: 100vh; overflow-x: hidden; border-top: 1px solid rgb(255 255 255 / 12%); background: radial-gradient(circle at 8% 76%, rgb(214 237 159 / 7%), transparent 30%), linear-gradient(145deg, rgb(5 5 5 / 82%), rgb(0 0 0 / 84%) 55%, rgb(8 9 8 / 82%)); }
+.about-content { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(300px, .9fr) minmax(0, 1.1fr); align-items: center; gap: clamp(38px, 6vw, 100px); min-height: calc(100vh - clamp(68px, 7vw, 108px)); padding: clamp(70px, 7vw, 120px) clamp(24px, 6vw, 110px) clamp(48px, 6vw, 80px); }
+.about-footer { position: relative; z-index: 2; width: 100%; display: flex; align-items: center; min-height: clamp(68px, 7vw, 108px); border-top: 1px solid rgb(242 238 227 / 18%); background: rgb(0 0 0 / 72%); overflow: hidden; }.about-footer .parallax { width: 100%; }
 .about-footer-text { padding-right: clamp(20px, 2vw, 38px); }
-.about-lanyard { height: min(90vh, 860px); min-height: 560px; transform: translateY(-6vh); }
+.about-lanyard { height: min(82vh, 780px); min-height: 500px; transform: translateY(-4vh); }
 .about-copy { max-width: 720px; }
 .about-kicker { margin: 0 0 clamp(14px, 1.8vw, 24px); color: #d6ed9f; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; }
 .about-role { max-width: 760px; height: clamp(180px, 21vw, 270px); margin: 0 0 5px; transform: none; }
@@ -19,4 +19,4 @@
 .about-cv { display: inline-flex; align-items: center; gap: 18px; margin-top: 36px; padding: 13px 18px; border: 1px solid rgb(236 236 229 / 45%); border-radius: 999px; color: #f2eee3; font-size: 11px; letter-spacing: .14em; text-decoration: none; text-transform: uppercase; transition: background .3s ease, color .3s ease; }
 .about-cv:hover { background: #f2eee3; color: #111211; }
 .about-cv span { color: #d6ed9f; font-size: 17px; line-height: 0; }
-@media (max-width: 850px) { .about-content { grid-template-columns: 1fr; min-height: auto; padding: 20vw 9vw 28vw; } .about-lanyard { height: 70vh; min-height: 420px; transform: none; order: 2; } .about-copy { order: 1; } .about-identities { grid-template-columns: 1fr; max-width: 440px; margin-top: -24px; } }
+@media (max-width: 850px) { .about-content { grid-template-columns: 1fr; min-height: auto; padding: clamp(90px, 14vw, 140px) clamp(20px, 6vw, 40px) 48px; } .about-lanyard { height: 60vh; min-height: 380px; transform: none; order: 2; } .about-copy { order: 1; } .about-identities { grid-template-columns: 1fr; max-width: 440px; margin-top: -24px; } }
