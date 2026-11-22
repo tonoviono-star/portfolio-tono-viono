@@ -13,6 +13,7 @@ import "../components/AccordionGallery/AccordionGallery.css";
 import "../components/FlexCarousel/FlexCarousel.css";
 import "../components/WorksSection/WorksSection.css";
 import "../components/TrueFocus/TrueFocus.css";
+import "../components/InteractivePortrait/InteractivePortrait.css";
 import "../components/DriftWall/DriftWall.css";
 import "../components/ContributeSection/ContributeSection.css";
 

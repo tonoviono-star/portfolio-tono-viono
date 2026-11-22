@@ -3,6 +3,7 @@
 import { FormEvent, useState } from 'react';
 import DriftWall from '@/components/DriftWall/DriftWall';
 import TrueFocus from '@/components/TrueFocus/TrueFocus';
+import InteractivePortrait from '@/components/InteractivePortrait/InteractivePortrait';
 
 const contacts = [
   { name: 'WhatsApp', value: '+62 821 9910 9157', href: 'https://wa.me/6282199109157', icon: 'wa' },
@@ -40,7 +41,10 @@ export default function ContributeSection() {
   return (
     <>
       <section className="connect-intro" aria-label="Let us connect">
-        <TrueFocus sentence="LET US CONNECT" separator=" " focusStyle="brackets" borderColor="#d6ed9f" glowColor="rgb(214 237 159 / 45%)" highlightColor="#f2eee3" blurAmount={5} focusScale={1.05} animationDuration={0.55} pauseBetweenAnimations={1.1} />
+        <InteractivePortrait />
+        <div className="connect-intro-overlay">
+          <TrueFocus sentence="LET US CONNECT" separator=" " focusStyle="brackets" borderColor="#d6ed9f" glowColor="rgb(214 237 159 / 38%)" highlightColor="#f2eee3" blurAmount={5} focusScale={1.05} unfocusedOpacity={0.42} animationDuration={0.55} pauseBetweenAnimations={1.1} />
+        </div>
       </section>
       <section className="drift-wall-section" aria-label="Galeri foto Tono Viono">
         <DriftWall
@@ -55,7 +59,7 @@ export default function ContributeSection() {
           turn={-12}
           parallax={0.7}
           pauseOnHover={false}
-          overlayColor="#000000"
+          overlayColor="transparent"
           fade={0.45}
           style={{}}
         />

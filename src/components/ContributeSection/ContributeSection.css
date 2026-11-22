@@ -1,7 +1,9 @@
-.connect-intro { position: relative; display: grid; min-height: clamp(360px, 58vw, 780px); place-items: center; overflow: hidden; padding: 10vw 7vw; background: radial-gradient(circle at 20% 78%, rgb(214 237 159 / 7%), transparent 30%), linear-gradient(145deg, rgb(5 5 5 / 82%), rgb(0 0 0 / 84%) 65%, rgb(7 9 7 / 82%)); color: #f2eee3; }
-.connect-intro .focus-container { position: relative; z-index: 1; max-width: min(100%, 1200px); gap: clamp(12px, 2vw, 32px); }
-.connect-intro .focus-word { font-size: clamp(3rem, 9vw, 10rem); font-weight: 600; letter-spacing: -.085em; line-height: .86; }
-.drift-wall-section { position: relative; height: clamp(420px, 57vw, 760px); overflow: hidden; background: rgb(0 0 0 / 88%); border-top: 1px solid rgb(242 238 227 / 14%); }
+.connect-intro { position: relative; width: 100%; height: clamp(560px, 86svh, 920px); overflow: hidden; padding: 0; background: #161718; border-top: 1px solid rgb(242 238 227 / 14%); color: #f2eee3; }
+.connect-intro-overlay { position: absolute; right: 0; bottom: clamp(24px, 5vh, 56px); left: 0; z-index: 5; display: flex; justify-content: center; padding: 0 clamp(20px, 6vw, 7vw); background: transparent; pointer-events: none; }
+.connect-intro .focus-container { position: relative; z-index: 1; max-width: min(100%, 1200px); gap: clamp(12px, 2vw, 32px); background: transparent; }
+.connect-intro .focus-word { font-size: clamp(2.1rem, 6.8vw, 6.8rem); font-weight: 600; letter-spacing: -.075em; line-height: .88; color: rgb(242 238 227 / 72%); text-shadow: 0 4px 28px rgb(0 0 0 / 50%); }
+.connect-intro .focus-word.active { color: rgb(242 238 227 / 88%); }
+.drift-wall-section { position: relative; height: clamp(420px, 57vw, 760px); overflow: hidden; background: transparent; border-top: 1px solid rgb(242 238 227 / 14%); }
 .contribute-section { position: relative; border-top: 1px solid rgb(242 238 227 / 14%); background: radial-gradient(circle at 82% 16%, rgb(214 237 159 / 6%), transparent 28%), rgb(0 0 0 / 84%); color: #f2eee3; }
 .contribute-inner { position: relative; z-index: 1; width: min(1440px, 100%); margin: 0 auto; padding: clamp(90px, 12vw, 170px) clamp(24px, 6vw, 110px); }
 .contribute-inner > header { padding-bottom: clamp(48px, 7vw, 96px); }
@@ -20,4 +22,4 @@
 .contact-list a:last-child { border-bottom: 1px solid rgb(242 238 227 / 16%); }.contact-list a:hover { padding-left: 7px; color: #d6ed9f; }
 .contact-list svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }.contact-list a:nth-of-type(4) svg { fill: currentColor; stroke: none; }
 .contact-list span { display: grid; gap: 5px; }.contact-list small { color: rgb(242 238 227 / 52%); font-size: 9px; letter-spacing: .13em; text-transform: uppercase; }.contact-list strong { font-size: clamp(.95rem, 1.2vw, 1.2rem); font-weight: 500; letter-spacing: -.025em; }.contact-list i { color: #d6ed9f; font-size: 15px; font-style: normal; }
-@media (max-width: 850px) { .connect-intro { min-height: 46svh; } .drift-wall-section { height: clamp(390px, 88vw, 580px); } .contribute-inner { padding: 100px 24px; }.contribute-grid { grid-template-columns: 1fr; gap: 68px; } }
+@media (max-width: 850px) { .connect-intro { height: clamp(480px, 76svh, 640px); padding: 0; } .connect-intro-overlay { bottom: 24px; padding: 0 18px; } .connect-intro .focus-word { font-size: clamp(2rem, 8.8vw, 3.2rem); } .drift-wall-section { height: clamp(390px, 88vw, 580px); } .contribute-inner { padding: 100px 24px; }.contribute-grid { grid-template-columns: 1fr; gap: 68px; } }
